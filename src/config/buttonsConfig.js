@@ -17,6 +17,6 @@ let buttons = {
         leftButtonColor: 'btn-danger',
         rightButtonColor: 'btn-success'
     }
-}
+};
 
 export default buttons;

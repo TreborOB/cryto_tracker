@@ -1,5 +1,5 @@
 body {
-    background-color: #5ab9ea;
+    background-color: #377BB5;
     padding: 20px;
     margin: 0;
 }
@@ -41,22 +41,3 @@ ul.header li a {
     margin-bottom: 10px;
 }
 
-.active {
-    background-color: #0099FF;
-}
-
-div#crypto-container {
-    background: white;
-    width: 70%;
-    margin: 0 auto 4px auto;
-    padding: 1em;
-    box-shadow: 1px 1px 0 lightgrey;
-}
-
-span.left {
-    font-weight: bold;
-}
-
-span.right {
-    float: right;
-}

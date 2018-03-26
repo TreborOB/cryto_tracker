@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import api from './test/stubAPI';
+import api from './test/crytoAPI';
 import buttons from './config/buttonsConfig';
 import axios from 'axios';
 import {HashRouter, NavLink, Route} from "react-router-dom";
@@ -22,7 +22,7 @@ class CrytoForm extends React.Component {
         }
         this.props.addHandler(name, name_abbrev, amount_purchased, price);
         this.setState({name: '', name_abbrev: '', amount_purchased: '', price: ''});
-    }
+    };
 
     handleNameChange = (e) => this.setState({name: e.target.value});
 
@@ -37,7 +37,7 @@ class CrytoForm extends React.Component {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-2">
-                        <button type="button" className="btn btn-success"
+                        <button type="button" className="btn btn-primary"
                                 onClick={this.handleSubmit}>Add Crytocurrency
                         </button>
                     </div>
@@ -56,9 +56,10 @@ class CrytoForm extends React.Component {
                                onChange={this.handleNameAbbrevChange}
                         />
                     </div>
-                    <div className="col-sm-3">
+                    <div className="col-sm-2">
                         <input type="number" className="form-control"
                                placeholder="Amount Purchased"
+                               min="0"
                                value={this.state.amount_purchased}
                                onChange={this.handleAmountPurchasedChange}
                         />
@@ -66,6 +67,7 @@ class CrytoForm extends React.Component {
                     <div className="col-sm-2">
                         <input type="number" className="form-control"
                                placeholder="Price"
+                               min="0"
                                value={this.state.price}
                                onChange={this.handlePriceChange}
                         />
@@ -84,7 +86,10 @@ class Cryto extends React.Component {
         name: this.props.cryto.name,
         name_abbrev: this.props.cryto.name_abbrev,
         amount_purchased: this.props.cryto.amount_purchased,
-        price: this.props.cryto.price
+        price: this.props.cryto.price,
+        market_cap: this.props.cryto.market_cap,
+        volume_24h: this.props.cryto.volume_24h,
+        circulating_supply: this.props.cryto.circulating_supply
     };
     handleEdit = () => this.setState({status: 'edit'});
 
@@ -94,7 +99,6 @@ class Cryto extends React.Component {
         this.props.deleteHandler(this.props.cryto.price)
     );
 
-    handleSave = (e) => null;
     handleCancel = () => {
         this.setState({
             status: '',
@@ -117,10 +121,11 @@ class Cryto extends React.Component {
         let name_abbrev = this.state.name_abbrev.trim();
         let amount_purchased = this.state.amount_purchased.trim();
         let price = this.state.price.trim();
+
         if (!name || !name_abbrev || !amount_purchased || !price) {
             return;
         }
-        this.setState({status: ''})
+        this.setState({status: ''}) ;
         this.props.updateHandler(this.props.cryto.price,
             name, name_abbrev, amount_purchased, price);
     };
@@ -131,12 +136,19 @@ class Cryto extends React.Component {
         let leftButtonHandler = this.handleEdit;
         let rightButtonHandler = this.handleDelete;
         let fields = [
-            <p key={'namebb'}>{this.state.name}</p>,
+            <p key={'name'}>{this.state.name}</p>,
             <p key={'name_abbrev'}>{this.state.name_abbrev}</p>,
             <p key={'amount_purchased'}>Total Purchased: {this.state.amount_purchased}</p>,
             <p key={'price'}>Price Per Coin: {this.state.price}</p>,
-            <p key={'total_invested'}>Total Invested: {this.state.price * this.state.amount_purchased}</p>
+            <p key={'total_invested'}>Total Invested: €{this.state.price * this.state.amount_purchased}</p>
         ];
+
+        let additionalInfoFields = [
+            <p key={'market_cap'}>Market Cap: {this.state.market_cap}</p>,
+            <p key={'volume_24h'}>Volume (24h): {this.state.volume_24h}</p>,
+            <p key={'circulating_supply'}>Circulating Supply: {this.state.circulating_supply}</p>
+        ];
+
         if (this.state.status === 'edit') {
             activeButtons = buttons.edit;
             leftButtonHandler = this.handleSave;
@@ -148,10 +160,12 @@ class Cryto extends React.Component {
                 <input type="text" className="form-control"
                        value={this.state.name_abbrev}
                        onChange={this.handleNameAbbrevChange}/>,
-                <input type="text" className="form-control"
+                <input type="number" className="form-control"
+                       min="0"
                        value={this.state.amount_purchased}
                        onChange={this.handleAmountPurchasedChange}/>,
-                <input type="text" className="form-control"
+                <input type="number" className="form-control"
+                       min="0"
                        value={this.state.price}
                        onChange={this.handlePriceChange}/>
             ];
@@ -164,13 +178,16 @@ class Cryto extends React.Component {
         }
 
         return (
-            <div className="col-sm-3">
+            <div className="col-sm-6">
                 <div className="panel panel-primary">
                     <div className="panel-heading">
                         {this.props.cryto.name} ({this.props.cryto.name_abbrev})
                     </div>
                     <div className="panel-body">
-                        {fields}
+                        <div className="row">
+                            <div className="col-md-6">{fields}</div>
+                            <div className="col-md-6">{additionalInfoFields}</div>
+                        </div>
                     </div>
                     <div className="panel-footer">
                         <div className="btn-group btn-group-justified" role="group" aria-label="...">
@@ -238,13 +255,13 @@ class Main extends React.Component {
                     <h1>Crytocurrency Tracker</h1>
                     <ul className="header">
                         <li><NavLink exact to="/">Portfolio</NavLink></li>
-                        <li><NavLink to="/new-cryto">New Cryto</NavLink></li>
+                        <li><NavLink to="/current-crytos">Current Crytos</NavLink></li>
                         <li><NavLink to="/prices">Prices</NavLink></li>
                         <li><NavLink to="/contact">Contact</NavLink></li>
                     </ul>
                     <div className="content">
                         <Route exact path="/" component={Home}/>
-                        <Route path="/new-cryto" component={NewCryto}/>
+                        <Route path="/current-crytos" component={NewCryto}/>
                         <Route path="/prices" component={Prices}/>
                         <Route path="/contact" component={Contact}/>
                     </div>
@@ -263,9 +280,17 @@ class Home extends React.Component {
         return (
             <div>
                 <h2>Portfolio Information</h2><br/>
-                <div className="well">Total Number of Crytocurrencies Invested in: {totalCrytos.length}</div>
-                <div className="well">Total Number of Coins: {totalCoinAmount}</div>
-                <div className="well">Total Investment (€): {totalInvested}</div>
+                <div className="row">
+                    <div className="col-sm-4">
+                        <div className="well">Total Number of Crytocurrencies Invested in: {totalCrytos.length}</div>
+                    </div>
+                    <div className="col-sm-4">
+                        <div className="well">Total Number of Coins: {totalCoinAmount}</div>
+                    </div>
+                    <div className="col-sm-4">
+                        <div className="well">Total Portfolio Value (€): {totalInvested}</div>
+                    </div>
+                </div>
             </div>
         );
     }
@@ -305,7 +330,7 @@ class NewCryto extends React.Component {
         let crytos = api.getAll();
         return (
             <div>
-                <CrytoForm addHandler={this.addCryto}/>
+                <CrytoForm addHandler={this.addCryto}/><br/>
                 <CrytoList crytos={crytos}
                            updateHandler={this.updateCryto}
                            deleteHandler={this.deleteCryto}/>
@@ -343,7 +368,6 @@ class Prices extends React.Component {
                     <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Purchase Price</th>
                         <th>Live Price</th>
                     </tr>
                     </thead>
@@ -351,7 +375,6 @@ class Prices extends React.Component {
                     {Object.keys(this.state.cryptos).map((key) => (
                         <tr className="">
                             <td>{key}</td>
-                            <td>Doe</td>
                             <td><NumberFormat value={this.state.cryptos[key].EUR} displayType={'text'}
                                               decimalPrecision={2} thousandSeparator={true} prefix={'€'}/></td>
                         </tr>
@@ -359,10 +382,10 @@ class Prices extends React.Component {
                     ))}
                     </tbody>
                 </table>
+                <div className="well well-sm">All prices courtesy of cryptocompare.com</div>
             </div>
         )
     }
-
 }
 
 export default CrytoApp;
