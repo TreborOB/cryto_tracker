@@ -45,7 +45,7 @@ A diagram showing the app's hierarchical component design (see example below).
 ## Routing.
 
 + /#/ - Default portfolio view
-+ /coins/<coin-name> e.g. Bitcoin - Detailed view of the specified crytocurrency
++ /coins/coin-name e.g. Bitcoin - Detailed view of the specified crytocurrency
 + /current-crytos - Displays all current crytocurrencies being tracked
 + /prices - Displays the live EUR price for all tracked crytocurrencies
 
