@@ -277,8 +277,16 @@ class coinDetail extends React.Component {
     state = {};
 
     componentDidMount() {
+        let coinName = '' ;
+        let stockCoins = ['Bitcoin', 'Stellar' , 'Litecoin' , 'Ethereum' , 'Ripple'] ;
+        if (!stockCoins.includes(this.props.match.params.id )) {
+            coinName = 'Placeholder'
+        }else{
+            coinName = this.props.match.params.id
+        }
+
         request.get(
-            '/coinInfo/coins/' + this.props.match.params.id + '.json', (err, res) => {
+        '/coinInfo/coins/' + coinName + '.json', (err, res) => {
                 let json = JSON.parse(res.text);
                 localCache.setCoin(json);
                 this.setState({});
