@@ -51,7 +51,7 @@ A diagram showing the app's hierarchical component design (see example below).
 
 ## Extra features
 
-The HTTPS client Axios was used in conjunction with the Crytocompare API (https://min-api.cryptocompare.com/) to retrieve the live EUR price of any crytocurrencies being tracked within the application.
+The HTTPS client Axios was used in conjunction with the Crytocompare API (https://min-api.cryptocompare.com/) to retrieve the live EUR price of all crytocurrencies being tracked within the application.
 
 ## Independent learning.
 
