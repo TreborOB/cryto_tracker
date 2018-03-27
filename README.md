@@ -1,28 +1,26 @@
 # Assignment 1 - ReactJS app.
 
-Name: ... your name ...
+Name: Robert O' Brien
 
 ## Overview.
-...... A statement of the app concept and objectives (about a half-page) ........
+Cryto Tracker is a crytocurrency tracking app which allows a user to create a custom list of crytocurrencies - each crytocurrency can then displayed along with it's price, market cap and many other cryrocurrency attributes. Using the Crytocompare API, live prices for each of the user defined crytocurrencies are also displayed.
 
-
- . . . . . List of user features (excluding user registration and authentication) . . . . 
- 
- + Feature 1
- + Feature 2
- + Feature 3
- + etc
- + etc
+ + Portfolio Dashboard View
+ + View Detailed Crytocurrency Information 
+ + Add a New Crytocurrency
+ + Edit an Existing Crytocurrency
+ + Delete an Existing Crytocurrency
+ + Live Crytocurrency Price View
 
 ## Installation requirements.
-. . . .  List of software used to develop the app . . . . . . . 
 + ReactJS v15.3.0
 + Bootstrap 3
 + create-react-app tool
-+ etc
-+ etc 
++ lodash v.2.4.2
++ superagent v.1.6.1
++ axios v.0.18.0
 
-. . . . . . Also, explain (to a third party) what steps one must take to run your app after cloning it from the repository, e.g. any non-standard software installation; any environment setup; how to start app; where to view app in browser . . . . . . . At its simplest this may just be: npm install + npm start
+To run the application, simply clone or download the project and then run npm install + npm start
 
 ## Data Model Design.
 
@@ -45,16 +43,15 @@ A diagram showing the app's hierarchical component design (see example below).
 ![][image3]
 
 ## Routing.
-. . . . List each route supported and state the associated view . . . . . 
 
-+ /foos - displays all published foos
-+ /foos/:id - detail view of a particular foo (:id)
-+ etc
-+ etc
++ /#/ - Default portfolio view
++ /coins/<coin-name> e.g. Bitcoin - Detailed view of the specified crytocurrency
++ /current-crytos - Displays all current crytocurrencies being tracked
++ /prices - Displays the live EUR price for all tracked crytocurrencies
 
 ## Extra features
 
-. . . . . Briefly explain any non-standard features, functional or non-functional (e.g. user registration, authentication) developed for the app . . . . . .  
+The HTTPS client Axios was used in conjunction with the Crytocompare API (https://min-api.cryptocompare.com/) to retrieve the live EUR price of any crytocurrencies being tracked within the application.
 
 ## Independent learning.
 
