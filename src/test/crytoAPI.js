@@ -5,6 +5,7 @@ class cryptoAPI {
     constructor() {
         this.crytos = [
             {
+                'id': '1',
                 'name': 'Bitcoin',
                 'name_abbrev': 'BTC',
                 "amount_purchased": '123',
@@ -16,6 +17,7 @@ class cryptoAPI {
             },
 
             {
+                'id': '2',
                 'name': 'Ethereum',
                 'name_abbrev': 'ETH',
                 "amount_purchased": '23',
@@ -27,6 +29,7 @@ class cryptoAPI {
             },
 
             {
+                'id': '3',
                 'name': 'Ripple',
                 'name_abbrev': 'XRP',
                 "amount_purchased": '4',
@@ -37,6 +40,7 @@ class cryptoAPI {
             },
 
             {
+                'id': '4',
                 'name': 'Litecoin',
                 'name_abbrev': 'LTC',
                 "amount_purchased": '49',
@@ -47,6 +51,7 @@ class cryptoAPI {
 
             },
             {
+                'id': '5',
                 'name': 'Stellar',
                 'name_abbrev': 'XLM',
                 "amount_purchased": '499',

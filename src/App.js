@@ -3,7 +3,9 @@ import './App.css';
 import api from './test/crytoAPI';
 import buttons from './config/buttonsConfig';
 import axios from 'axios';
-import {HashRouter, NavLink, Route} from "react-router-dom";
+import request from 'superagent';
+import localCache from './localCache';
+import {HashRouter, Link, NavLink, Route} from "react-router-dom";
 
 let NumberFormat = require('react-number-format');
 
@@ -125,7 +127,7 @@ class Cryto extends React.Component {
         if (!name || !name_abbrev || !amount_purchased || !price) {
             return;
         }
-        this.setState({status: ''}) ;
+        this.setState({status: ''});
         this.props.updateHandler(this.props.cryto.price,
             name, name_abbrev, amount_purchased, price);
     };
@@ -257,13 +259,12 @@ class Main extends React.Component {
                         <li><NavLink exact to="/">Portfolio</NavLink></li>
                         <li><NavLink to="/current-crytos">Current Crytos</NavLink></li>
                         <li><NavLink to="/prices">Prices</NavLink></li>
-                        <li><NavLink to="/contact">Contact</NavLink></li>
                     </ul>
                     <div className="content">
                         <Route exact path="/" component={Home}/>
                         <Route path="/current-crytos" component={NewCryto}/>
                         <Route path="/prices" component={Prices}/>
-                        <Route path="/contact" component={Contact}/>
+                        <Route path="/coins/:id" component={coinDetail}/>
                     </div>
                 </div>
             </HashRouter>
@@ -271,11 +272,81 @@ class Main extends React.Component {
     }
 }
 
+
+class coinDetail extends React.Component {
+    state = {};
+
+    componentDidMount() {
+        request.get(
+            '/coinInfo/coins/' + this.props.match.params.id + '.json', (err, res) => {
+                let json = JSON.parse(res.text);
+                localCache.setCoin(json);
+                this.setState({});
+            });
+    }
+
+    render() {
+        let display = <p>No coin details</p>;
+        let coin = localCache.getCoin();
+        if (coin) {
+            display = (
+                <div>
+                    <AdditionalInfo coin={coin}/>
+                </div>
+            );
+        }
+        return (
+            <div>
+                {display}
+            </div>
+        );
+    }
+}
+
+
+class AdditionalInfo extends React.Component {
+    render() {
+        let coin = this.props.coin;
+        return (
+            <div>
+
+                <div className="panel panel-primary">
+                    <div className="panel-heading"><h2>{coin.id}</h2></div>
+                    <div>
+                        <img src={coin.image}
+                             alt={coin.name}
+                             width="150"
+                             height="150"
+                        />
+                    </div>
+                    <div className="panel-body"><p>{coin.description}</p>
+                        <h3>Transaction Volume</h3>
+                        <p>{coin.transaction_volume.btc}</p>
+                        <p>{coin.transaction_volume.eur}</p></div>
+                </div>
+            </div>
+        );
+    }
+}
+
+
 class Home extends React.Component {
     render() {
         let totalCrytos = api.getAll();
         let totalCoinAmount = api.getTotalCoins();
         let totalInvested = api.getTotalInvestment();
+
+        let crytoDetails = totalCrytos.map(function (d, idx) {
+            return <tr>
+                <th scope="row">{idx + 1}</th>
+                <td key={idx}><Link to={"/coins/" + d.name}>{d.name + ' ' + d.name_abbrev}</Link></td>
+                <td key={idx}>{d.amount_purchased}</td>
+                <td key={idx}>{d.price}</td>
+                <td key={idx}>{d.market_cap}</td>
+                <td key={idx}>{d.volume_24h}</td>
+                <td key={idx}>{d.circulating_supply}</td>
+            </tr>
+        });
 
         return (
             <div>
@@ -291,23 +362,28 @@ class Home extends React.Component {
                         <div className="well">Total Portfolio Value (€): {totalInvested}</div>
                     </div>
                 </div>
+
+                <table className="table table-striped">
+                    <caption>Current Portfolio</caption>
+                    <thead className="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Amount Held</th>
+                        <th scope="col">Purchase Price (€)</th>
+                        <th scope="col">Market Cap</th>
+                        <th scope="col">Volume (24h)</th>
+                        <th scope="col">Circulating Supply</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {crytoDetails}
+                    </tbody>
+                </table>
             </div>
         );
     }
 }
-
-class Contact extends React.Component {
-    render() {
-        return (
-            <div>
-                <h2>MORE INFORMATION</h2>
-                <p>Link to GitHub profile <a href="https://github.com/TreborOB">GitHub</a>.
-                </p>
-            </div>
-        );
-    }
-}
-
 
 class NewCryto extends React.Component {
 
@@ -364,7 +440,7 @@ class Prices extends React.Component {
     render() {
         return (
             <div className="App">
-                <table className="table">
+                <table className="table table-hover">
                     <thead>
                     <tr>
                         <th>Name</th>
@@ -376,7 +452,7 @@ class Prices extends React.Component {
                         <tr className="">
                             <td>{key}</td>
                             <td><NumberFormat value={this.state.cryptos[key].EUR} displayType={'text'}
-                                              decimalPrecision={2} thousandSeparator={true} prefix={'€'}/></td>
+                                              decimalprecision={2} thousandSeparator={true} prefix={'€'}/></td>
                         </tr>
 
                     ))}
@@ -387,5 +463,6 @@ class Prices extends React.Component {
         )
     }
 }
+
 
 export default CrytoApp;

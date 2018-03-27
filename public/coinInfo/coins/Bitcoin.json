@@ -1,0 +1,12 @@
+{
+  "description": "Bitcoin is a cryptocurrency and worldwide payment system. It is the first decentralized digital currency, as the system works without a central bank or single administrator",
+  "transaction_volume": {
+    "btc": "142,266.57338819 BTC",
+    "eur": "€938,612,571.41"
+  },
+  "id": "Bitcoin",
+  "image": [
+    "img/bitcoin.jpeg"
+  ],
+  "name": "Bitcoin"
+}

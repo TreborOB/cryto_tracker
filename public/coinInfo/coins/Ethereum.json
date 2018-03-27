@@ -1,0 +1,12 @@
+{
+  "description": "Ethereum is a decentralized platform for applications that run exactly as programmed without any chance of fraud, censorship or third-party interferences",
+  "transaction_volume": {
+    "btc": "12,342.71946325 ETH",
+    "eur": "€310,591,333.99"
+  },
+  "id": "Ethereum",
+  "image": [
+    "img/ethereum.jpg"
+  ],
+  "name": "Ethereum"
+}

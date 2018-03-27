@@ -1,0 +1,12 @@
+{
+  "description": "Ripple is a technology that acts as both a cryptocurrency and a digital payment network for financial transactions",
+  "transaction_volume": {
+    "btc": "63,362.57968825 XRP",
+    "eur": "€898,812,621.16"
+  },
+  "id": "Ripple",
+  "image": [
+    "img/ripple.jpeg"
+  ],
+  "name": "Ripple"
+}

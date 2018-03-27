@@ -1,0 +1,12 @@
+{
+  "description": "Stellar is an open-source, distributed payments infrastructure. It is leapfrog technology that connects people, payment systems, and banks with a focus on the developing world",
+  "transaction_volume": {
+    "btc": "27,362.77391225 XLM",
+    "eur": "€198,591,381.76"
+  },
+  "id": "Stellar",
+  "image": [
+    "img/stellar.jpg"
+  ],
+  "name": "Stellar"
+}
