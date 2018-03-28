@@ -5,7 +5,10 @@ import buttons from './config/buttonsConfig';
 import axios from 'axios';
 import request from 'superagent';
 import localCache from './localCache';
+import ReactTable from 'react-table'
+import 'react-table/react-table.css'
 import {HashRouter, Link, NavLink, Route} from "react-router-dom";
+
 
 let NumberFormat = require('react-number-format');
 
@@ -132,7 +135,6 @@ class Cryto extends React.Component {
             name, name_abbrev, amount_purchased, price);
     };
 
-
     render() {
         let activeButtons = buttons.normal;
         let leftButtonHandler = this.handleEdit;
@@ -235,7 +237,6 @@ class CrytoList extends React.Component {
     }
 }
 
-
 class CrytoApp extends React.Component {
 
     render() {
@@ -311,7 +312,6 @@ class coinDetail extends React.Component {
     }
 }
 
-
 class AdditionalInfo extends React.Component {
     render() {
         let coin = this.props.coin;
@@ -344,17 +344,27 @@ class Home extends React.Component {
         let totalCoinAmount = api.getTotalCoins();
         let totalInvested = api.getTotalInvestment();
 
-        let crytoDetails = totalCrytos.map(function (d, idx) {
-            return <tr>
-                <th scope="row">{idx + 1}</th>
-                <td key={idx}><Link to={"/coins/" + d.name}>{d.name + ' ' + d.name_abbrev}</Link></td>
-                <td key={idx}>{d.amount_purchased}</td>
-                <td key={idx}>{d.price}</td>
-                <td key={idx}>{d.market_cap}</td>
-                <td key={idx}>{d.volume_24h}</td>
-                <td key={idx}>{d.circulating_supply}</td>
-            </tr>
-        });
+        const columns = [{
+            Header: 'Name',
+            accessor: 'name',
+            Cell: ({ row }) => (<Link to={{ pathname: `/coins/${row.name}` }}>{row.name}</Link>),
+        }, {
+            Header: 'Amount Held',
+            accessor: 'amount_purchased'
+        },{
+            Header: 'Price',
+            accessor: 'price',
+        },{
+            Header: 'Market Cap',
+            accessor: 'market_cap',
+        },{
+            Header: 'Volume_24h',
+            accessor: 'volume_24h',
+        },{
+            Header: 'Circulating Supply',
+            accessor: 'circulating_supply',
+        }];
+
 
         return (
             <div>
@@ -370,24 +380,12 @@ class Home extends React.Component {
                         <div className="well">Total Portfolio Value (€): {totalInvested}</div>
                     </div>
                 </div>
-
-                <table className="table table-striped">
-                    <caption>Current Portfolio</caption>
-                    <thead className="thead-dark">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Amount Held</th>
-                        <th scope="col">Purchase Price (€)</th>
-                        <th scope="col">Market Cap</th>
-                        <th scope="col">Volume (24h)</th>
-                        <th scope="col">Circulating Supply</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {crytoDetails}
-                    </tbody>
-                </table>
+                <ReactTable
+                    data={totalCrytos}
+                    columns={columns}
+                    minRows={10}
+                    defaultPageSize={5}
+                />
             </div>
         );
     }
@@ -442,7 +440,6 @@ class Prices extends React.Component {
                 const cryptos = res.data;
                 this.setState({cryptos: cryptos});
             })
-
     }
 
     render() {
