@@ -248,7 +248,6 @@ class CrytoApp extends React.Component {
     }
 }
 
-
 class Main extends React.Component {
 
     render() {
@@ -257,12 +256,13 @@ class Main extends React.Component {
                 <div>
                     <h1>Crytocurrency Tracker</h1>
                     <ul className="header">
-                        <li><NavLink exact to="/">Portfolio</NavLink></li>
+                        <li><NavLink exact to="/portfolio">Portfolio</NavLink></li>
                         <li><NavLink to="/current-crytos">Current Crytos</NavLink></li>
                         <li><NavLink to="/prices">Prices</NavLink></li>
                     </ul>
                     <div className="content">
                         <Route exact path="/" component={Home}/>
+                        <Route exact path="/portfolio" component={Home}/>
                         <Route path="/current-crytos" component={NewCryto}/>
                         <Route path="/prices" component={Prices}/>
                         <Route path="/coins/:id" component={coinDetail}/>
@@ -275,19 +275,18 @@ class Main extends React.Component {
 
 
 class coinDetail extends React.Component {
-    state = {};
 
     componentDidMount() {
-        let coinName = '' ;
-        let stockCoins = ['Bitcoin', 'Stellar' , 'Litecoin' , 'Ethereum' , 'Ripple'] ;
-        if (!stockCoins.includes(this.props.match.params.id )) {
+        let coinName = '';
+        let stockCoins = ['Bitcoin', 'Stellar', 'Litecoin', 'Ethereum', 'Ripple'];
+        if (!stockCoins.includes(this.props.match.params.id)) {
             coinName = 'Placeholder'
-        }else{
+        } else {
             coinName = this.props.match.params.id
         }
 
         request.get(
-        '/coinInfo/coins/' + coinName + '.json', (err, res) => {
+            '/coinInfo/coins/' + coinName + '.json', (err, res) => {
                 let json = JSON.parse(res.text);
                 localCache.setCoin(json);
                 this.setState({});
@@ -347,20 +346,20 @@ class Home extends React.Component {
         const columns = [{
             Header: 'Name',
             accessor: 'name',
-            Cell: ({ row }) => (<Link to={{ pathname: `/coins/${row.name}` }}>{row.name}</Link>),
+            Cell: ({row}) => (<Link to={{pathname: `/coins/${row.name}`}}>{row.name}</Link>),
         }, {
             Header: 'Amount Held',
             accessor: 'amount_purchased'
-        },{
+        }, {
             Header: 'Price',
             accessor: 'price',
-        },{
+        }, {
             Header: 'Market Cap',
             accessor: 'market_cap',
-        },{
+        }, {
             Header: 'Volume_24h',
             accessor: 'volume_24h',
-        },{
+        }, {
             Header: 'Circulating Supply',
             accessor: 'circulating_supply',
         }];

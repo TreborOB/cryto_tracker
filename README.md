@@ -6,6 +6,7 @@ Name: Robert O' Brien
 Cryto Tracker is a crytocurrency tracking app which allows a user to create a custom list of crytocurrencies - each crytocurrency can then displayed along with it's price, market cap and many other cryrocurrency attributes. Using the Crytocompare API, live prices for each of the user defined crytocurrencies are also displayed.
 
  + Portfolio Dashboard View
+ + Multi-Column Crytocurrency List
  + View Detailed Crytocurrency Information 
  + Add a New Crytocurrency
  + Edit an Existing Crytocurrency
@@ -19,28 +20,58 @@ Cryto Tracker is a crytocurrency tracking app which allows a user to create a cu
 + lodash v.2.4.2
 + superagent v.1.6.1
 + axios v.0.18.0
++ react-table v.6.8.0
 
 To run the application, simply clone or download the project and then run npm install + npm start
 
 ## Data Model Design.
+The data model is focused on information about the crytocurrencies themselves.
 
-Diagram of app's data model (see example below) AND/OR a sample of the test data used (JSON or equivalent).
+######Coin Information
+Details such as the Crytocurrencie name, price, amount purchased etc.
 
-![][image1]
+```javascript
+{
+   'id': '1',
+   'name': 'Bitcoin',
+   'name_abbrev': 'BTC',
+   'amount_purchased': '123',
+   'price': '132',
+   'market_cap': '€108,169,629',
+   'volume_24h': '€4,305,567',
+   'circulating_supply': '16,940'
+}
+```
 
-Use meaningful sample data. Briefly explain any non-trivial issues.
+######Additional Coin Information
+Contains additional, more detailed information about the Crytocurency. For the next part of the assignment, this will be extensively populated via the Crytocompare API.
+
+```javascript
+{
+  "description": "Ripple is a technology that acts as both a cryptocurrency and a digital payment network for financial transactions",
+  "transaction_volume": {
+    "btc": "17,362.78168825 LTC",
+    "eur": "€232,112,281.09"
+  },
+  "id": "Litecoin",
+  "image": [
+    "/img/litecoin.jpg"
+  ],
+  "name": "Litecoin"
+}
+```
 
 ## App Component Design.
-
-A diagram showing the app's hierarchical component design (see example below). 
-
-![][image2]
+ 
+![alt text](/design.jpg)
 
 ## UI Design.
 
-. . . . . Screenshots of app's views (see example below) with appropriate captions (user regeneration and login views, if implemented, can be omitted) . . . . . . . 
+The UI uses a Navigational bar containing links to each section on the application. Styling is supplied by Bootstrap v.3.3.6 and CSS.
 
-![][image3]
+![alt text](/portfolio_view.png)
+![alt text](/current_crytos_view.png)
+![alt text](/prices_view.png)
 
 ## Routing.
 
@@ -55,8 +86,9 @@ The HTTPS client Axios was used in conjunction with the Crytocompare API (https:
 
 ## Independent learning.
 
-. . . . . State the non-standard aspects of Angular (or other related technologies) that you researched and applied in this assignment . . . . .  
+1. Research of third-party react components/libraries was carried out to see how they could be implemented to help improve the project
 
+2. The Axios HTTP client and the Crytocompare API were both researched/investigated to dertermine how live Crytocurrency proces could be retrieved
 
 
 [image1]: ../Archive/model.png
