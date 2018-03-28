@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0034e022-3ae3-4671-aee7-fddc6e302f3f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/coinInfo/coins/Bitcoin.json" afterPath="$PROJECT_DIR$/public/coinInfo/coins/Bitcoin.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/coinInfo/coins/Ethereum.json" afterPath="$PROJECT_DIR$/public/coinInfo/coins/Ethereum.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/coinInfo/coins/Litecoin.json" afterPath="$PROJECT_DIR$/public/coinInfo/coins/Litecoin.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/coinInfo/coins/Placeholder.json" afterPath="$PROJECT_DIR$/public/coinInfo/coins/Placeholder.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/coinInfo/coins/Ripple.json" afterPath="$PROJECT_DIR$/public/coinInfo/coins/Ripple.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/coinInfo/coins/Stellar.json" afterPath="$PROJECT_DIR$/public/coinInfo/coins/Stellar.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,8 +20,8 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-54">
-              <caret line="364" column="28" lean-forward="false" selection-start-line="364" selection-start-column="28" selection-end-line="364" selection-end-column="28" />
+            <state relative-caret-position="354">
+              <caret line="441" column="14" lean-forward="true" selection-start-line="441" selection-start-column="14" selection-end-line="441" selection-end-column="14" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -209,9 +200,9 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="720" />
+    <option name="width" value="1440" />
     <option name="height" value="873" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -280,7 +271,7 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="Reac&#9;null&#9;null&#10;.git&#9;FILE&#9;file:///Users/robertobrien/Desktop/cryto_tracker/.gitignore&#10;ignore&#9;FILE&#9;file:///Users/robertobrien/Desktop/cryto_tracker/node_modules/react-scripts/template/gitignore&#10;ign&#9;FILE&#9;file:///Users/robertobrien/Desktop/cryto_tracker/node_modules/react-scripts/template/gitignore" />
+    <property name="SearchEverywhereHistoryKey" value="READ&#9;FILE&#9;file:///Users/robertobrien/Desktop/cryto_tracker/README.md&#10;Reac&#9;null&#9;null&#10;.git&#9;FILE&#9;file:///Users/robertobrien/Desktop/cryto_tracker/.gitignore&#10;ignore&#9;FILE&#9;file:///Users/robertobrien/Desktop/cryto_tracker/node_modules/react-scripts/template/gitignore&#10;ign&#9;FILE&#9;file:///Users/robertobrien/Desktop/cryto_tracker/node_modules/react-scripts/template/gitignore" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
@@ -410,15 +401,15 @@
       <workItem from="1522144312572" duration="5364000" />
       <workItem from="1522158040612" duration="14007000" />
       <workItem from="1522226136148" duration="8479000" />
-      <workItem from="1522246321911" duration="164000" />
+      <workItem from="1522246321911" duration="708000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70024000" />
+    <option name="totallyTimeSpent" value="70568000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="873" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -430,7 +421,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.50766283" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29020557" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3084833" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2746781" sideWeight="0.49328214" order="0" side_tool="false" content_ui="combo" />
@@ -496,13 +487,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cryptoAPI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -889,10 +873,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="364" column="28" lean-forward="false" selection-start-line="364" selection-start-column="28" selection-end-line="364" selection-end-column="28" />
+        <state relative-caret-position="354">
+          <caret line="441" column="14" lean-forward="true" selection-start-line="441" selection-start-column="14" selection-end-line="441" selection-end-column="14" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
