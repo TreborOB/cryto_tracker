@@ -27,8 +27,8 @@ To run the application, simply clone or download the project and then run npm in
 ## Data Model Design.
 The data model is focused on information about the crytocurrencies themselves.
 
-######Coin Information
-Details such as the Crytocurrencie name, price, amount purchased etc.
+##### Coin Information #####
+Details such as the Crytocurrency name, price, amount purchased etc.
 
 ```javascript
 {
@@ -43,7 +43,7 @@ Details such as the Crytocurrencie name, price, amount purchased etc.
 }
 ```
 
-######Additional Coin Information
+##### Additional Coin Information #####
 Contains additional, more detailed information about the Crytocurency. For the next part of the assignment, this will be extensively populated via the Crytocompare API.
 
 ```javascript
@@ -69,13 +69,18 @@ Contains additional, more detailed information about the Crytocurency. For the n
 
 The UI uses a Navigational bar containing links to each section on the application. Styling is supplied by Bootstrap v.3.3.6 and CSS.
 
+##### Portfolio Screen #####
 ![alt text](/portfolio_view.png)
+
+##### Add/Edit Cryto List Screen #####
 ![alt text](/current_crytos_view.png)
+
+##### Live Prices Screen #####
 ![alt text](/prices_view.png)
 
 ## Routing.
-
 + /#/ - Default portfolio view
++ /#/portfolio - Default portfolio view
 + /coins/coin-name e.g. Bitcoin - Detailed view of the specified crytocurrency
 + /current-crytos - Displays all current crytocurrencies being tracked
 + /prices - Displays the live EUR price for all tracked crytocurrencies
@@ -89,8 +94,3 @@ The HTTPS client Axios was used in conjunction with the Crytocompare API (https:
 1. Research of third-party react components/libraries was carried out to see how they could be implemented to help improve the project
 
 2. The Axios HTTP client and the Crytocompare API were both researched/investigated to dertermine how live Crytocurrency proces could be retrieved
-
-
-[image1]: ../Archive/model.png
-[image2]: ../Archive/design.jpg
-[image3]: ../Archive/screen.png
