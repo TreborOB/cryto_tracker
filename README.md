@@ -78,6 +78,9 @@ The UI uses a Navigational bar containing links to each section on the applicati
 ##### Live Prices Screen #####
 ![alt text](/prices_view.png)
 
+##### Additional Coin Info Screen #####
+![alt text](/specfic_coin_view.png)
+
 ## Routing.
 + /#/ - Default portfolio view
 + /#/portfolio - Default portfolio view
