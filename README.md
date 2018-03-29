@@ -32,7 +32,6 @@ Details such as the Crytocurrency name, price, amount purchased etc.
 
 ```javascript
 {
-   'id': '1',
    'name': 'Bitcoin',
    'name_abbrev': 'BTC',
    'amount_purchased': '123',
