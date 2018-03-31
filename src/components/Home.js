@@ -48,7 +48,7 @@ class Home extends React.Component {
                     data={totalCrytos}
                     columns={columns}
                     minRows={10}
-                    defaultPageSize={5}
+                    defaultPageSize={10}
                 />
             </div>
         );

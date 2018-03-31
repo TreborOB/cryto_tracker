@@ -12,7 +12,6 @@ class cryptoAPI {
                 "market_cap": '€108,169,629',
                 "volume_24h": '€4,305,567',
                 "circulating_supply": '16,940'
-
             },
 
             {
@@ -23,7 +22,6 @@ class cryptoAPI {
                 "market_cap": '€37,744,067',
                 "volume_24h": '€1,215,247',
                 "circulating_supply": '98,432'
-
             },
 
             {
@@ -54,9 +52,32 @@ class cryptoAPI {
                 "market_cap": '€3,270,536,415',
                 "volume_24h": '€34,964,940',
                 "circulating_supply": '18,550,337,622'
-
             }
         ];
+    }
+
+    getAll() {
+        return this.crytos;
+    }
+
+    add(n, nb, a, p) {
+        let len = this.crytos.length;
+        let newLen = this.crytos.push({
+            name: n, name_abbrev: nb, amount_purchased: a, price: p
+        });
+        return newLen > len;
+    }
+
+    update(key, n, nb, a, p) {
+        let index = _.findIndex(this.crytos,
+            (cryto) => cryto.price === key
+        );
+        if (index !== -1) {
+            this.crytos.splice(index, 1,
+                {name: n, name_abbrev: nb, amount_purchased: a, price: p});
+            return true;
+        }
+        return false;
     }
 
     deleteCryto(k) {
@@ -64,10 +85,6 @@ class cryptoAPI {
             (cryto) => cryto.price === k
         );
         return elements;
-    }
-
-    getAll() {
-        return this.crytos;
     }
 
     getTotalCoins() {
@@ -92,26 +109,6 @@ class cryptoAPI {
             totalInvested = +totalInvested + +this.crytos[i].price;
         }
         return totalInvested;
-    }
-
-    add(n, nb, a, p) {
-        let len = this.crytos.length;
-        let newLen = this.crytos.push({
-            name: n, name_abbrev: nb, amount_purchased: a, price: p
-        });
-        return newLen > len;
-    }
-
-    update(key, n, nb, a, p) {
-        let index = _.findIndex(this.crytos,
-            (cryto) => cryto.price === key
-        );
-        if (index !== -1) {
-            this.crytos.splice(index, 1,
-                {name: n, name_abbrev: nb, amount_purchased: a, price: p});
-            return true;
-        }
-        return false;
     }
 }
 

@@ -42,7 +42,6 @@ class Prices extends React.Component {
                             <td><NumberFormat value={this.state.cryptos[key].EUR} displayType={'text'}
                                               decimalprecision={2} thousandSeparator={true} prefix={'€'}/></td>
                         </tr>
-
                     ))}
                     </tbody>
                 </table>
