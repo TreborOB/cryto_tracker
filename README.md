@@ -63,23 +63,23 @@ Contains additional, more detailed information about the Crytocurency. For the n
 
 ## App Component Design.
  
-![alt text](/design.jpg)
+![design](/design.jpg)
 
 ## UI Design.
 
 The UI uses a Navigational bar containing links to each section on the application. Styling is supplied by Bootstrap v.3.3.6 and CSS.
 
 ##### Portfolio Screen #####
-![alt text](/portfolio_view.png)
+![portfolio_view](/portfolio_view.png)
 
 ##### Add/Edit Cryto List Screen #####
-![alt text](/current_crytos_view.png)
+![current_crytos_view](/current_crytos_view.png)
 
 ##### Live Prices Screen #####
-![alt text](/prices_view.png)
+![prices_view](/prices_view.png)
 
 ##### Additional Coin Info Screen #####
-![alt text](/specfic_coin_view.png)
+![specific_coin_view](/specific_coin_view.png)
 
 ## Routing.
 + /#/ - Default portfolio view
