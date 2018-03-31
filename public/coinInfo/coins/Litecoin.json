@@ -8,5 +8,6 @@
   "image": [
     "/img/litecoin.jpg"
   ],
-  "name": "Litecoin"
+  "name": "Litecoin",
+  "currency_id": "2"
 }

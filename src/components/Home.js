@@ -1,5 +1,5 @@
 import React from 'react';
-import api from '../test/crytoAPI';
+import api from '../api/crytoAPI';
 import ReactTable from 'react-table'
 import {Link} from "react-router-dom"
 

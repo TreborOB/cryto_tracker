@@ -89,10 +89,13 @@ The UI uses a Navigational bar containing links to each section on the applicati
 
 ## Extra features
 
-The HTTPS client Axios was used in conjunction with the Crytocompare API (https://min-api.cryptocompare.com/) to retrieve the live EUR price of all crytocurrencies being tracked within the application.
+1. The HTTPS client Axios was used in conjunction with the Crytocompare API (https://min-api.cryptocompare.com/) to retrieve the live EUR price of all crytocurrencies being tracked within the application.
+
+2. Within the Additional Coin Information section, I used a Crytocurrency Ticker supplied by coinmarketcap.com. Currently, this is used alongside the mock API data but for the next part of the assignment, I plan on using data derived from API calls only i.e. live prices.
 
 ## Independent learning.
 
 1. Research of third-party react components/libraries was carried out to see how they could be implemented to help improve the project
 
 2. The Axios HTTP client and the Crytocompare API were both researched/investigated to dertermine how live Crytocurrency proces could be retrieved
+

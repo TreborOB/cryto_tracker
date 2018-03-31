@@ -1,0 +1,12 @@
+{
+  "description": "Placeholder Description",
+  "transaction_volume": {
+    "btc": "10,000.0000000",
+    "eur": "€200,000,000.00"
+  },
+  "id": "Placeholder",
+  "image": [
+    "/img/placeholder.jpg"
+  ],
+  "name": "Placeholder"
+}

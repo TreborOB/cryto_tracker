@@ -1,13 +1,12 @@
 {
   "description": "Ripple is a technology that acts as both a cryptocurrency and a digital payment network for financial transactions",
   "transaction_volume": {
-    "btc": "63,362.57968825 XRP",
-    "eur": "€898,812,621.16"
+    "btc": "17,362.78168825 LTC",
+    "eur": "€232,112,281.09"
   },
-  "id": "Ripple",
+  "id": "Litecoin",
   "image": [
-    "/img/ripple.jpeg"
+    "/img/litecoin.jpg"
   ],
-  "name": "Ripple",
-  "currency_id": "52"
+  "name": "Litecoin"
 }

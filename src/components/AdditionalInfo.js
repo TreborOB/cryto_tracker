@@ -5,7 +5,6 @@ class AdditionalInfo extends React.Component {
         let coin = this.props.coin;
         return (
             <div>
-
                 <div className="panel panel-primary">
                     <div className="panel-heading"><h2>{coin.id}</h2></div>
                     <div>
@@ -20,6 +19,7 @@ class AdditionalInfo extends React.Component {
                         <p>{coin.transaction_volume.btc}</p>
                         <p>{coin.transaction_volume.eur}</p></div>
                 </div>
+                <div className="coinmarketcap-currency-widget" data-currencyid={coin.currency_id} data-base="EUR" >Please refresh the page</div>
             </div>
         );
     }

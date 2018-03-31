@@ -1,5 +1,5 @@
 import React from 'react';
-import api from '../test/crytoAPI';
+import api from '../api/crytoAPI';
 import CrytoList from './CrytoList'
 import CrytoForm from './CrytoForm'
 
