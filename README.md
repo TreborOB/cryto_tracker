@@ -56,7 +56,8 @@ Contains additional, more detailed information about the Crytocurency. For the n
   "image": [
     "/img/litecoin.jpg"
   ],
-  "name": "Litecoin"
+  "name": "Litecoin",
+  "currency_id": "2"
 }
 ```
 

@@ -9,5 +9,5 @@
     "/img/bitcoin.jpeg"
   ],
   "name": "Bitcoin",
-  "currency_id": "1"
+  "currency_id": "1" //Used by the coinmarketcap.com price ticker - each coin is given a unique id
 }
