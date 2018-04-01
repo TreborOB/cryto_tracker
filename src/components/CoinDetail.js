@@ -14,6 +14,8 @@ class coinDetail extends React.Component {
             coinName = this.props.match.params.id
         }
 
+        console.log(coinName.toString());
+
         request.get(
             '/coinInfo/coins/' + coinName + '.json', (err, res) => {
                 let json = JSON.parse(res.text);
