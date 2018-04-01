@@ -24,8 +24,6 @@ class Prices extends React.Component {
     }
 
     render() {
-
-        console.log(this.state.cryptos.toString())
         return (
             <div className="App">
                 <table className="table table-hover">
@@ -50,6 +48,5 @@ class Prices extends React.Component {
         )
     }
 }
-
 
 export default Prices;
